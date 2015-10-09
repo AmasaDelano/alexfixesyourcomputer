@@ -1,0 +1,77 @@
+html, body {
+    background-color: orange;
+    height: 100%;
+}
+
+.container {
+    background-color: #F3C571;
+    min-height: 90%;
+    /*margin-bottom: 2em;*/
+}
+
+nav {
+     font-size: 1.3em;
+     text-align: center;
+     margin-bottom: 1.5em;
+}
+
+nav .nav-pills {
+    display: inline-block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav .nav-pills .active {
+    background-color: orange;
+    margin-top: 0.6em;
+    font-size: 1.2em;
+}
+
+header {
+    text-align: center;
+}
+
+.download-buttons-box {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.download-buttons-box > div {
+    display: inline-block;
+    margin-left: 1.7em;
+    margin-right: 1.7em;
+}
+
+.download-button {
+    width: 200px;
+    height: 125px;
+}
+
+.download-button > a {
+    text-decoration: none;
+}
+
+.download-button span {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    color: White;
+    font-family: Arial;
+    font-size: 14px;
+    line-height: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    top: -45px;
+}
+
+section {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section p {
+    text-align: left;
+}

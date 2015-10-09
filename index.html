@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html ng-app="techsupport">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Alex Will Fix Your Computer! Just ask.</title>
+
+    <link rel="shortcut icon" href="aluminum-favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/site.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+
+    <script src="js/techsupport.js"></script>
+</head>
+<body ng-controller="TabController as tab">
+    <div class="container">
+
+        <header>
+            <h1>Alex's Tech Support Site</h2>
+        </header>
+
+        <nav>
+
+            <ul class="nav nav-pills">
+                <li role="presentation" ng-class="{ active: tab.isTab(1) }">
+                    <a href="#/support" ng-click="tab.setTab(1)">
+                        Support
+                    </a>
+                </li>
+                <li role="presentation" ng-class="{ active: tab.isTab(2) }">
+                    <a href="#/thoughts" ng-click="tab.setTab(2)">
+                        Thoughts
+                    </a>
+                </li>
+                <li role="presentation" ng-class="{ active: tab.isTab(3) }">
+                    <a href="#/contact" ng-click="tab.setTab(3)">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <section ng-show="tab.isTab(1)" ng-controller="OsController as os">
+
+            <h2>One-Time Support</h3>
+
+            <div class="download-buttons-box">
+                <article ng-repeat="possibleOs in os.possibleOses">
+
+                    <h3 ng-show="{{ os.multipleOses() }}">
+                        {{ possibleOs.displayName }} Support
+                    </h3>
+                    <div class="download-button">
+                        <a href="{{ possibleOs.shortTermDownload }}" target="_top">
+                            <img
+                                src="images/download.png"
+                                alt="Click to Download One-Time Remote Tech Support"
+                                title="Click to Download One-Time Remote Tech Support"
+                                border="0"
+                                width="200"
+                                height="125" />
+
+                            <span>
+                                One-Time Remote Support
+                                <br/>
+                                Download <label ng-show="{{ os.multipleOses() }}">for {{ possibleOs.displayName }}</label>
+                            </span>
+                        </a>
+                    </div>
+
+                </article>
+            </div>
+
+            <h2>Long-Term Support</h3>
+
+            <div class="download-buttons-box">
+                <article ng-repeat="possibleOs in os.possibleOses">
+
+                    <h3 ng-show="{{ os.multipleOses() }}">
+                        {{ possibleOs.displayName }} Support
+                    </h3>
+                    <div class="download-button">
+                        <a href="{{ possibleOs.longTermDownload }}" target="_top">
+                            <img
+                                src="images/download.png"
+                                alt="Click to Download Long-Term Remote Tech Support"
+                                title="Click to Download Long-Term Remote Tech Support"
+                                border="0"
+                                width="200"
+                                height="125" />
+
+                            <span>
+                                Long Term Remote Support
+                                <br/>
+                                Download <label ng-show="{{ os.multipleOses() }}">for {{ possibleOs.displayName }}</label>
+                            </span>
+                        </a>
+                    </div>
+
+                </article>
+            </div>
+
+            <p class="lead">
+                The above links will download software. The software will allow Alex to look at and control your computer.
+            </p>
+            <p class="lead">
+                That will help him to fix your computer!
+            </p>
+
+        </section>
+
+        <section ng-show="tab.isTab(2)">
+            <p class="lead">
+                Someday, I will write some thoughts here.
+            </p>
+            <p class="lead">
+                For now, find thoughts <a href="http://c.xkcd.com/random/comic/" target="_blank">here</a>.
+            </p>
+        </section>
+
+        <section class="text-center" ng-show="tab.isTab(3)">
+            <h4>Email</h4>
+            <h4>
+                <a href="mailto:alexfixesyourcomputer@gmail.com" target="_blank">
+                    alexfixesyourcomputer@gmail.com
+                </a>
+            </h4>
+            <h4>with questions, concerns, or inquiries.</h4>
+        </section>
+
+    </div>
+</body>
+</html>
